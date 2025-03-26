@@ -8,26 +8,32 @@ int main()
 {
     srand(time(NULL));
 
-    __uint16_t qtd;
-    __uint8_t select;
-    __uint8_t loop = 1;
+    int qtd;
+    int select;
+    int loop = 1;
 
     while (loop == 1)
     {
 
-        printf("Digite o tamanho da base de dados : \n");
+        printf(" 1 - bubble_sort\n 2 - selection_sort\n 3 - insertion_sort\n 4 - merge_sort\n 5 - quick_sort\n 6 - counting_sort\n 7 - Exibir Base de Dados\n 0 - Sair\n");
+
+        printf("Digite uma opção : \n");
+        scanf("%d", &select);
+
+        printf("Digite o tamanho da base de dados que deseja usar : \n");
         scanf("%d", &qtd);
 
-        if(qtd <= 0)
+        if (qtd <= 0)
         {
             printf("Digite um tamanho válido, maior que 0 e menor que 200001\n");
-            continue;;
+            continue;
         }
-
-        printf(" 1 - bubble_sort\n 2 - selection_sort\n 3 - insertion_sort\n 4 - merge_sort\n 5 - quick_sort\n 6 - counting_sort\n");
-
-        printf("Qual modelo de ordenação deseja usar : \n");
-        scanf("%d", &select);
+        
+        if (qtd > 200000)
+        {
+            printf("Digite um tamanho válido, maior que 0 e menor que 200001\n");
+            continue;
+        }
 
         int base[qtd];
         gerar_base_dados(base, qtd);
@@ -35,22 +41,25 @@ int main()
         switch (select)
         {
         case 1:
-            bubble_sort(&base, qtd);
+            bubble_sort(base, qtd);
             break;
         case 2:
-            selection_sort(&base, qtd);
+            selection_sort(base, qtd);
             break;
         case 3:
-            insertion_sort(&base, qtd);
+            insertion_sort(base, qtd);
             break;
         case 4:
-            merge_sort(&base, qtd);
+            merge_sort(base, qtd);
             break;
         case 5:
-            quick_sort(&base, qtd);
+            quick_sort(base, qtd);
             break;
         case 6:
-            counting_sort(&base, qtd);
+            counting_sort(base, qtd);
+            break;
+        case 7:
+            listar_base(base, qtd);
             break;
         case 0:
             loop = 0;
@@ -61,9 +70,12 @@ int main()
             break;
         }
 
-        if(loop != 0)
+        if (loop != 0)
         {
-            listar_base(&base, qtd);
+            int sair;
+            listar_base(base, qtd);
+            printf("Pressione qualquer número para sair\n");
+            scanf("%d", &sair);
         }
     }
 
