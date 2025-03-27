@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ordenacao.h"
+#include <time.h>
 
 void listar_base(int  base_dados[], int qtd)
 {
@@ -8,6 +9,16 @@ void listar_base(int  base_dados[], int qtd)
     {
         printf("| base_dados[%d] = %d |\n", i, base_dados[i]);
     }
+}
+
+double medir_tempo(void (*sort_function)(int *, int), int base_dados[], int qtd)
+{
+    clock_t inicio, fim;
+    inicio = clock();
+    sort_function(base_dados, qtd);
+    fim = clock();
+
+    return ((double)(fim - inicio) / CLOCKS_PER_SEC);
 }
 
 void bubble_sort(int  base_dados[], int qtd)

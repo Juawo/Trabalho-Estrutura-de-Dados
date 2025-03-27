@@ -23,39 +23,52 @@ int main()
         printf("Digite o tamanho da base de dados que deseja usar : \n");
         scanf("%d", &qtd);
 
-        if (qtd <= 0)
+        if (qtd <= 0 || qtd > 200001)
         {
             printf("Digite um tamanho válido, maior que 0 e menor que 200001\n");
             continue;
         }
         
-        if (qtd > 200000)
+
+        int *base = (int *)malloc(qtd * sizeof(int));
+        if (base == NULL)
         {
-            printf("Digite um tamanho válido, maior que 0 e menor que 200001\n");
-            continue;
+            printf("Erro ao alocar memória para a base de dados\n");
+            return 1;
         }
 
-        int base[qtd];
         gerar_base_dados(base, qtd);
+        double tempo_gasto;
 
         switch (select)
         {
         case 1:
-            bubble_sort(base, qtd);
+            tempo_gasto = medir_tempo(bubble_sort, base, qtd);
+            printf(" --- Bubble Sort -> base de dados = %d -> tempo gasto = %.6f segundos ---\n ", qtd, tempo_gasto);
             break;
+
         case 2:
-            selection_sort(base, qtd);
+            tempo_gasto = medir_tempo(selection_sort, base, qtd);
+            printf(" --- Selection Sort -> base de dados = %d -> tempo gasto = %.6f segundos ---\n ", qtd, tempo_gasto);
             break;
+
         case 3:
-            insertion_sort(base, qtd);
+            tempo_gasto = medir_tempo(insertion_sort, base, qtd);
+            printf(" --- Insertion Sort -> base de dados = %d -> tempo gasto = %.6f segundos ---\n ", qtd, tempo_gasto);
             break;
+
         case 4:
-            merge_sort(base, qtd);
+            tempo_gasto = medir_tempo(merge_sort, base, qtd);
+            printf(" --- Merge Sort -> base de dados = %d -> tempo gasto = %.6f segundos ---\n ", qtd, tempo_gasto);
             break;
+
         case 5:
-            quick_sort(base, qtd);
+            tempo_gasto = medir_tempo(quick_sort, base, qtd);
+            printf(" --- Quick Sort -> base de dados = %d -> tempo gasto = %.6f segundos ---\n ", qtd, tempo_gasto);
             break;
         case 6:
+            tempo_gasto = medir_tempo(counting_sort, base, qtd);
+            printf(" --- Counting Sort -> base de dados = %d -> tempo gasto = %.6f segundos ---\n ", qtd, tempo_gasto);
             counting_sort(base, qtd);
             break;
         case 7:
@@ -73,10 +86,12 @@ int main()
         if (loop != 0)
         {
             int sair;
-            listar_base(base, qtd);
+            // listar_base(base, qtd);
             printf("Pressione qualquer número para sair\n");
             scanf("%d", &sair);
         }
+
+        free(base);
     }
 
     return 0;

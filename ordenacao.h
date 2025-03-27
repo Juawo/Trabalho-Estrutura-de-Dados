@@ -2,6 +2,7 @@
 #define ORDENACAO_H
 
 void listar_base(int base_dados[], int qtd);
+double medir_tempo(void (*sort_function)(int *, int), int base_dados[], int qtd);
 void bubble_sort(int base_dados[], int qtd);
 void selection_sort(int base_dados[], int qtd);
 void insertion_sort(int base_dados[], int qtd);
