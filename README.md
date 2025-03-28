@@ -48,6 +48,7 @@ Os testes foram realizados em um notebook com as seguintes especificações:
 
 Os resultados obtidos para cada algoritmo e tamanho de base de dados estão apresentados na tabela abaixo:
 
+### Bubble Sort
 | Método de Ordenação | Base de Dados | Tempo (s)  |
 | ------------------- | ------------- | ---------- |
 | Bubble Sort         | 100           | 0.000154   |
@@ -59,6 +60,11 @@ Os resultados obtidos para cada algoritmo e tamanho de base de dados estão apre
 | Bubble Sort         | 100000        | 42.886987  |
 | Bubble Sort         | 150000        | 96.714914  |
 | Bubble Sort         | 200000        | 174.790515 |
+
+### Selection Sort
+
+| Método de Ordenação | Base de Dados | Tempo (s)  |
+| ------------------- | ------------- | ---------- |
 | Selection Sort      | 100           | 0.000029   |
 | Selection Sort      | 500           | 0.000502   |
 | Selection Sort      | 1000          | 0.001812   |
@@ -68,6 +74,11 @@ Os resultados obtidos para cada algoritmo e tamanho de base de dados estão apre
 | Selection Sort      | 100000        | 17.155942  |
 | Selection Sort      | 150000        | 38.573908  |
 | Selection Sort      | 200000        | 68.496389  |
+
+### Insertion Sort
+
+| Método de Ordenação | Base de Dados | Tempo (s)  |
+| ------------------- | ------------- | ---------- |
 | Insertion Sort      | 100           | 0.000019   |
 | Insertion Sort      | 500           | 0.000293   |
 | Insertion Sort      | 1000          | 0.001037   |
@@ -77,6 +88,11 @@ Os resultados obtidos para cada algoritmo e tamanho de base de dados estão apre
 | Insertion Sort      | 100000        | 9.563467   |
 | Insertion Sort      | 150000        | 21.470546  |
 | Insertion Sort      | 200000        | 38.111177  |
+
+### Merge Sort
+
+| Método de Ordenação | Base de Dados | Tempo (s)  |
+| ------------------- | ------------- | ---------- |
 | Merge Sort          | 100           | 0.000031   |
 | Merge Sort          | 500           | 0.000175   |
 | Merge Sort          | 1000          | 0.000337   |
@@ -86,6 +102,11 @@ Os resultados obtidos para cada algoritmo e tamanho de base de dados estão apre
 | Merge Sort          | 100000        | 0.036167   |
 | Merge Sort          | 150000        | 0.058085   |
 | Merge Sort          | 200000        | 0.078517   |
+
+### Quick Sort
+
+| Método de Ordenação | Base de Dados | Tempo (s)  |
+| ------------------- | ------------- | ---------- |
 | Quick Sort          | 100           | 0.000013   |
 | Quick Sort          | 500           | 0.000067   |
 | Quick Sort          | 1000          | 0.000144   |
@@ -95,6 +116,11 @@ Os resultados obtidos para cada algoritmo e tamanho de base de dados estão apre
 | Quick Sort          | 100000        | 0.189212   |
 | Quick Sort          | 150000        | 0.410025   |
 | Quick Sort          | 200000        | 0.720172   |
+
+### Counting Sort
+
+| Método de Ordenação | Base de Dados | Tempo (s)  |
+| ------------------- | ------------- | ---------- |
 | Counting Sort       | 100           | 0.000006   |
 | Counting Sort       | 500           | 0.000014   |
 | Counting Sort       | 1000          | 0.000023   |
