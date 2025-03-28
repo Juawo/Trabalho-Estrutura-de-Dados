@@ -66,14 +66,17 @@ int main()
             tempo_gasto = medir_tempo(quick_sort, base, qtd);
             printf(" --- Quick Sort -> base de dados = %d -> tempo gasto = %.6f segundos ---\n ", qtd, tempo_gasto);
             break;
+
         case 6:
             tempo_gasto = medir_tempo(counting_sort, base, qtd);
             printf(" --- Counting Sort -> base de dados = %d -> tempo gasto = %.6f segundos ---\n ", qtd, tempo_gasto);
             counting_sort(base, qtd);
             break;
+
         case 7:
             listar_base(base, qtd);
             break;
+            
         case 0:
             loop = 0;
             break;

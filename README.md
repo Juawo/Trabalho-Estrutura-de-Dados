@@ -1,3 +1,43 @@
+# Projeto de Comparação de Algoritmos de Ordenação
+
+Este projeto tem como objetivo implementar e comparar o desempenho de diferentes algoritmos de ordenação. Ele foi desenvolvido como parte do estudo de Estruturas de Dados, utilizando a linguagem C. Através deste projeto, é possível analisar o tempo de execução de cada algoritmo para diferentes tamanhos de bases de dados.
+
+## Estrutura do Projeto
+
+O projeto é composto pelos seguintes arquivos:
+
+- **`main.c`**: Arquivo principal que permite ao usuário interagir com o programa, escolhendo o algoritmo de ordenação e o tamanho da base de dados.
+- **`avaliacaoAutomatica.c`**: Realiza testes automáticos de desempenho para todos os algoritmos de ordenação implementados, salvando os resultados em um arquivo de texto.
+- **`ordenacao.h` e `ordenacao.c`**: Contêm as implementações dos algoritmos de ordenação, como Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort e Counting Sort.
+- **`gerador.h` e `gerador.c`**: Contêm a função para gerar bases de dados aleatórias.
+- **`resultados_sorts.txt`**: Arquivo onde os resultados dos testes automáticos são armazenados.
+- **`README.md`**: Documento explicativo do projeto e tabela com os resultados obtidos.
+
+## Algoritmos Implementados
+
+Os seguintes algoritmos de ordenação foram implementados:
+
+1. **Bubble Sort**: Algoritmo simples baseado em trocas repetidas de elementos adjacentes.
+2. **Selection Sort**: Seleciona o menor elemento e o coloca na posição correta.
+3. **Insertion Sort**: Insere elementos em suas posições corretas em um subarray ordenado.
+4. **Merge Sort**: Algoritmo baseado na técnica de divisão e conquista.
+5. **Quick Sort**: Algoritmo eficiente que utiliza a técnica de particionamento.
+6. **Counting Sort**: Algoritmo não comparativo baseado em contagem de elementos.
+
+## Funcionamento
+
+1. **Execução Manual (`main.c`)**:
+    - O usuário escolhe o algoritmo de ordenação e o tamanho da base de dados.
+    - O programa gera uma base de dados aleatória e mede o tempo de execução do algoritmo escolhido.
+
+2. **Execução Automática (`avaliacaoAutomatica.c`)**:
+    - Testa todos os algoritmos de ordenação para diferentes tamanhos de bases de dados.
+    - Os resultados são exibidos no terminal e salvos no arquivo `resultados_sorts.txt`.
+
+## Resultados
+
+Os resultados obtidos para cada algoritmo e tamanho de base de dados estão apresentados na tabela abaixo:
+
 | Método de Ordenação | Base de Dados | Tempo (s)    |
 |---------------------|---------------|--------------|
 | Bubble Sort         | 100           | 0.000154     |
@@ -54,3 +94,18 @@
 | Counting Sort       | 100000        | 0.002024     |
 | Counting Sort       | 150000        | 0.003643     |
 | Counting Sort       | 200000        | 0.004876     |
+
+## Compilação e Execução
+Para compilar e executar o projeto, utilize os seguintes comandos no terminal:
+
+```bash
+gcc -o main main.c ordenacao.c gerador.c avaliacaoAutomatica.c
+./main
+```
+ou
+```bash
+gcc -o avaliacaoAutomatica avaliacaoAutomatica.c ordenacao.c gerador.c
+./avaliacaoAutomatica
+```
+## Conclusão
+Através deste projeto, foi possível observar o desempenho de diferentes algoritmos de ordenação em relação ao tempo de execução. Os resultados demonstram que algoritmos como Merge Sort e Quick Sort são significativamente mais eficientes para grandes conjuntos de dados em comparação com Bubble Sort e Selection Sort. O Counting Sort, por sua vez, se destacou em conjuntos de dados com valores limitados.
